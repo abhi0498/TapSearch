@@ -13,6 +13,7 @@ def home():
         global paras,key
         paras=request.form["para"].split("\r\n\r\n")
         key =request.form["key"]
+        return redirect('/y')
         
 
 @app.route("/y",methods=["GET"])
