@@ -3,7 +3,7 @@ from flask import Flask,render_template,redirect,request
 app=Flask(__name__)
 paras=[]
 key=""
-ind=[]
+ind=list()
 @app.route("/",methods=["GET","POST"])
 
 def home():
@@ -12,6 +12,9 @@ def home():
     else:
         global paras,key
         paras=request.form["para"].split("\r\n\r\n")
+        i=[j for j in range(len(paras)) if paras[j]=='']
+        for d in i:
+            paras.remove('')
         key =request.form["key"]
         return redirect('/y')
         
@@ -20,7 +23,8 @@ def home():
 def y():
     global ind
     for i,para in enumerate(paras):
-        if key in para.split():
+        if key.lower() in [p.lower() for p in para.split()]:
             ind.append(i+1)
+    
     return ' '.join(str(ind))
 
