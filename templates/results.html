@@ -1,13 +1,42 @@
 {% include 'navbar.html' %}
+<style>
+    .hide {
+        display: none;
+    }
+</style>
 <h2>
     Results
 </h2>
 <p>Key is: <b>{{data.key}}</b></p>
 
+
 <p>Key found in: <b>{{data.ind}}</b></p>
 
+<button id="paras">Show Paras</button>
+
+<div class='hide' id="para">
+    {% for para in data.paras %}
+    <p>Para {{loop.index}}</p>
+
+    <p>{{para}}</p>
+
+    {% endfor%}
+
+</div>
 
 
 
 
 {% include 'footer.html' %}
+<script>
+    var paras = document.querySelector('#paras');
+    var para = document.querySelector('#para');
+
+    paras.addEventListener('click', () => {
+        para.classList.toggle('hide');
+        if (paras.textContent == "Hide paras")
+            paras.textContent = "Show paras"
+        else
+            paras.textContent = "Hide paras"
+    })
+</script>

@@ -31,9 +31,13 @@ def y():
         new_para=[re.sub('[^A-Za-z0-9]+', '', p) for p in new_para]
         if key.lower() in new_para:
             ind.append(i+1)
+    ind=ind[:10]
+    if len(ind)==0:
+        ind="Not found"
     data={
         'key':key,
-        'ind':ind[:10]
+        'ind':ind,
+        'paras':paras
     }
     return render_template('results.html',data=data)
 
@@ -44,6 +48,7 @@ def pdf():
     else:
         global paras,key
         pages=[]
+        paras=[]
         f=request.files['files']
         f.save(f.filename)
         pdfFileObj = open(f.filename, 'rb') 
