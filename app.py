@@ -46,7 +46,7 @@ def pdf():
         pages=[]
         f=request.files['files']
         f.save(f.filename)
-        pdfFileObj = open("family.pdf", 'rb') 
+        pdfFileObj = open(f.filename, 'rb') 
   
  
         pdfReader = PyPDF2.PdfFileReader(pdfFileObj) 
@@ -61,7 +61,7 @@ def pdf():
       
         
         
-        return str(pages[0].extractText())
+        return redirect('/y')
         
      
         
