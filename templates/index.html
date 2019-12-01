@@ -10,10 +10,8 @@
                 <form action="/" method="post">
 
                     <div class="form-group">
-                        <label for="age">Paragraphs</label>
-                        <textarea class="form-control" rows="5" cols="60" name="para" id="para">
-
-                         </textarea>
+                        <label for="para">Paragraphs</label>
+                        <textarea class="form-control" rows="9" cols="60" name="para" id="para"></textarea>
 
                     </div>
                     <div class="form-group">
@@ -32,9 +30,9 @@
 <script>
     document.querySelector('.btn1').addEventListener('click', reset);
     function reset() {
-        document.querySelector('#age').value = ""
-        document.querySelector('#children').value = ""
-        document.querySelector('#bmi').value = ""
+        document.querySelector('#para').value = ""
+        document.querySelector('#key').value = ""
+
 
     }
 </script>
