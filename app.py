@@ -9,9 +9,7 @@ ind=list()
 
 def home():
     if request.method=="GET":
-        global paras,key
-        paras=[]
-        key=[]
+
         return render_template("index.html")
     else:
         global paras,key
