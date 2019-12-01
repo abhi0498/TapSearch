@@ -56,7 +56,7 @@ def pdf():
  
         pdfReader = PyPDF2.PdfFileReader(pdfFileObj) 
         
-        key =request.form["key"]
+        key = request.form["key"]
         
   
         for i in range(pdfReader.numPages):
