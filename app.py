@@ -54,7 +54,7 @@ def pdf():
         f.save(f.filename)
         pdfFileObj = open(f.filename, 'rb') 
   
- 
+ #ok
         pdfReader = PyPDF2.PdfFileReader(pdfFileObj) 
         
         key = request.form["key"]
